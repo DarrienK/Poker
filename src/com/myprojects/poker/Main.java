@@ -10,12 +10,21 @@ public class Main {
 
     //Main driver of application
     static void RunEngine() {
-        int num = PlayerNumber();
-        // TODO Create Player objects with Player number and hand attributes
+        int numPlayers = PlayerNumber();
+        Card deck[] = new Card[52];
+        for(int i = 1; i <= 52; i++){
+            deck[i].getCard();
+        }
+        Player player[] = new Player[numPlayers];
+        for(int i = 2; i <= 4; i++){
+            player[i].setPlayerNumber(i);
+            player[i].setHand();
+        }
+
 
     }
 
-    private static int PlayerNumber() {
+    static int PlayerNumber() {
         Scanner sc = new Scanner(System.in);
         int num = 0;
         do {
@@ -28,5 +37,11 @@ public class Main {
         } while (num < 2 || num > 4);
         return num;
     }
+
+    String generateHand(){
+        return null;
+    }
+
+
 
 }
